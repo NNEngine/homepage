@@ -1,0 +1,438 @@
+/* ==============================
+   PDF Page Layout Effect
+============================== */
+
+body {
+    background: #37353E;                  /* Light workspace */
+    color: #1c1f23;                     /* Ink color */
+    /* font-family: "Georgia", "Times New Roman", serif; */
+     font-family: "Source Serif 4", Georgia, serif;
+     font-weight: 600;
+
+}
+
+/* Main paper container */
+.page {
+    max-width: 900px;
+    margin: 60px auto;
+    background: #D7D7D7;                 /* Paper white */
+    border-radius: 8px;
+    box-shadow:
+        /* Inner edge shadow (paper thickness) */
+        inset 0 0 0 1px rgba(0,0,0,0.08),
+
+        /* Tight dark border shadow */
+        0 0 0 5px rgba(0,0,0,0.12),
+
+        /* Medium lift shadow */
+        0 12px 25px rgba(0,0,0,0.35),
+
+        /* Deep ambient shadow */
+        0 30px 60px rgba(0,0,0,0.45);
+    overflow: hidden;
+}
+
+/* Page padding */
+.page-content {
+    padding: 65px 75px;
+}
+
+/* Section separation */
+.section {
+    padding: 4px 0px;
+    /* border-left: 1px solid #000000; */
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+/* Typography tuning for paper feel */
+.page h1 {
+    font-size: 2.6rem;
+    letter-spacing: 0.4px;
+    color: #111827;
+}
+
+.page h2 {
+    font-size: 1.6rem;
+    margin-top: 48px;
+    color: #1f2933;
+}
+
+.page p {
+     font-size: 1.05rem;
+    line-height: 1.8;
+    color: #2a2f35;
+}
+
+/* Subtle paragraph spacing */
+.page p + p {
+    margin-top: 14px;
+}
+
+/* Center hero */
+.hero {
+    padding-top: 20px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+/* ==============================
+   Portfolio / Knowledge Rows
+============================== */
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 24px;
+}
+
+/* Each row */
+.card {
+    cursor: pointer;
+
+    padding: 14px 4px 10px 4px;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    transition: transform 0.15s ease;
+}
+
+/* Bottom separator line */
+.card {
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.22);
+}
+
+/* Hover */
+.card:hover {
+    transform: translateX(4px);
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.35);
+}
+
+/* Title */
+.card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 650;
+    color: #1f2933;
+}
+
+/* Description */
+.card p {
+    margin: 4px 0 0 0;
+    font-size: 0.95rem;
+    color: #4b5563;
+}
+
+/* ==============================
+   Subtitle — Embedded Style
+============================== */
+
+.subtitle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 24px;
+    margin-top: 12px;
+    margin-bottom: 18px;
+}
+
+/* Individual label */
+.subtitle-pill {
+    flex: 1;
+    text-align: center;
+
+    padding-bottom: 6px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2a2f35;
+
+    background: transparent;
+    border-radius: 0;
+
+    /* Only bottom shadow */
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.22);
+
+    transition: box-shadow 0.2s ease;
+}
+
+/* Subtle hover enhancement (optional) */
+.subtitle-pill:hover {
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.35);
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+    .subtitle-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .subtitle-pill {
+        width: 100%;
+    }
+}
+
+
+
+
+/* ==============================
+   Hero Image (Blended into Page)
+============================== */
+
+.hero-image {
+    display: block;
+    margin: 24px auto;
+
+    width: 100%;
+    height: auto;
+
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+
+    opacity: 0.96;
+    filter: contrast(0.98) brightness(0.99);
+
+    /* 🔥 Feather fade on sides + bottom */
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 12%,
+        black 88%,
+        transparent 100%
+    ),
+    linear-gradient(
+        to bottom,
+        black 0%,
+        black 75%,
+        transparent 100%
+    );
+
+    -webkit-mask-composite: intersect;
+
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 12%,
+        black 88%,
+        transparent 100%
+    ),
+    linear-gradient(
+        to bottom,
+        black 0%,
+        black 75%,
+        transparent 100%
+    );
+
+    mask-composite: intersect;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 0.96;
+        transform: translateY(0);
+    }
+}
+
+.hero-caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .page {
+        margin: 20px;
+    }
+
+    .page-content {
+        padding: 30px 24px;
+    }
+}
+
+/* ==============================
+   Social Links — Embedded Style
+============================== */
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+/* Individual link */
+.social a {
+    display: inline-block;
+
+    padding-bottom: 6px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2a2f35;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    text-decoration: none;
+
+    /* Only bottom shadow */
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.22);
+
+    transition: box-shadow 0.2s ease, color 0.2s ease;
+}
+
+/* Hover */
+.social a:hover {
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,0.35);
+    color: #111827;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .social {
+        gap: 14px;
+    }
+}
+
+
+
+/* ==============================
+   Viewer Page (Markdown Paper)
+============================== */
+
+.viewer-header {
+    margin-bottom: 30px;
+}
+
+/* Markdown typography tuning */
+#content h1 {
+    font-size: 2.2rem;
+    margin-top: 20px;
+}
+
+#content h2 {
+    font-size: 1.6rem;
+    margin-top: 40px;
+}
+
+#content h3 {
+    font-size: 1.3rem;
+    margin-top: 28px;
+}
+
+/* Paragraphs */
+#content p {
+    line-height: 1.75;
+    font-size: 1.02rem;
+    margin: 12px 0;
+}
+
+/* Math spacing */
+.katex-display {
+    margin: 24px 0;
+}
+
+/* Lists */
+#content ul,
+#content ol {
+    margin: 12px 0 12px 24px;
+}
+
+/* Images inside markdown */
+#content img {
+    max-width: 100%;
+    display: block;
+    margin: 30px auto;
+    border-radius: 6px;
+}
+
+/* Blockquotes */
+#content blockquote {
+    background: rgba(255,255,255,0.03);
+    padding: 14px 18px;
+    border-left: 4px solid #58a6ff;
+    margin: 24px 0;
+}
+
+/* Table spacing */
+#content table {
+    margin: 30px 0;
+}
+
+/* Code block spacing */
+#content pre {
+    margin: 26px 0;
+}
+
+/* Page print mode */
+@media print {
+    body {
+        background: white;
+    }
+
+    .page {
+        box-shadow: none;
+        margin: 0;
+        background: white;
+        color: black;
+    }
+
+    .viewer-header {
+        display: none;
+    }
+}
+
+/* ==============================
+   Work Section Side Image Layout
+============================== */
+
+.work-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 48px;
+    align-items: center;
+}
+
+/* Text column */
+.work-text {
+    min-width: 0;
+}
+
+/* Image column */
+.work-image {
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsive stacking */
+@media (max-width: 800px) {
+    .work-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .work-image {
+        margin-top: 24px;
+    }
+}

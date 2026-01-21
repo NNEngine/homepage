@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shivam | Research & Math</title>
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- KaTeX Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/computer-modern@0.1.2/index.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600;700&display=swap">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+
+    <!-- KaTeX Scripts -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+</head>
+
+
+<body>
+
+<div class="page">
+    <div class="page-content">
+
+        <!-- Everything goes inside here -->
+
+        <header class="hero">
+            <h1>Shivam Sharma</h1>
+
+            <div class="subtitle-row">
+                <span class="subtitle-pill">AI &amp; ML Engineer</span>
+                <span class="subtitle-pill">Mathematical Thinker</span>
+                <span class="subtitle-pill">Research Builder</span>
+            </div>
+
+
+            <p class="tagline">
+                I explore intelligence through mathematics, algorithms, systems engineering,
+                and real-world experimentation.
+            </p>
+
+            <!-- Profile / Visual -->
+            <img
+                src="assets/images/Untitled_design-removebg-preview.png"
+                alt="Shivam Sharma"
+                class="hero-image"
+            >
+            <figcaption class="hero-caption">
+                Figure 1 — Human–machine interaction as an abstraction of intelligence.
+            </figcaption>
+
+        </header>
+
+
+        <!-- ABOUT -->
+       <section class="section">
+            <h2>About Me</h2>
+            <p>
+                I am an AI &amp; ML Engineer deeply interested in the mathematical foundations of intelligence.
+                My work spans machine learning, optimization theory, numerical methods, computer vision,
+                NLP, systems programming, and applied research.
+            </p>
+
+            <p>
+                I enjoy building things from first principles — whether it is implementing algorithms
+                from scratch in C++, analyzing convergence behavior mathematically, or designing complete
+                pipelines for real-world applications.
+            </p>
+
+            <p>
+                My long-term goal is to push fundamental research in artificial intelligence while building
+                practical systems that bridge theory and reality.
+            </p>
+        </section>
+
+        <!-- WORK -->
+        <section class="section work-layout">
+
+            <div class="work-text">
+                <h2>What I Work On</h2>
+
+                <ul class="pill-list">
+                    <li>Machine Learning &amp; Deep Learning</li>
+                    <li>Optimization Algorithms</li>
+                    <li>Mathematical Modeling &amp; Simulation</li>
+                    <li>Computer Vision &amp; NLP</li>
+                    <li>Low-Level Systems Programming (C++, WinAPI)</li>
+                    <li>Robotics &amp; Physical Intelligence</li>
+                    <li>Research Prototyping</li>
+                </ul>
+            </div>
+
+            <div class="work-image">
+                <img
+                    src="assets/images/new shivam sharma.png"
+                    alt="Shivam Sharma"
+                    class="hero-image"
+                >
+            </div>
+
+        </section>
+
+        <!-- Milestones stays separate -->
+        <section class="section">
+            <h2>Milestones</h2>
+
+            <ul class="timeline">
+                <li>Founded <strong>ITM AIR Lab</strong> — AI Research Lab at my college.</li>
+                <li>Authored a book chapter on <strong>AI in Drug Discovery</strong> (Bentham Science).</li>
+                <li>Built hundreds of high-performance C++ and ML projects.</li>
+                <li>Participated in national hackathons at IIT Kanpur and IIT Delhi.</li>
+                <li>Created large-scale synthetic datasets for benchmarking ML pipelines.</li>
+                <li>Active Kaggle competitor and research experimenter.</li>
+            </ul>
+        </section>
+
+
+        <!-- SOCIAL -->
+       <section class="section">
+            <h2>Connect</h2>
+
+            <div class="social">
+                <a href="https://github.com/NNEngine" target="_blank">GitHub</a>
+                <a href="https://huggingface.co/NNEngine" target="_blank">Hugging Face</a>
+                <a href="https://www.kaggle.com/sharmajicoder" target="_blank">Kaggle</a>
+                <a href="https://www.reddit.com/u/Ok-Comparison2514/s/zG80Ecl409" target="_blank">Reddit</a>
+                <a href="mailto:shivamsharma22468@gmail.com">Email</a>
+            </div>
+        </section>
+
+        <!-- KNOWLEDGE GRID -->
+        <section class="grid-section">
+            <h2 style = "text-align:center; font-size: 30px;">Projects + Work Portfolio</h2>
+
+            <section class="grid">
+
+                <div class="card" onclick="openTopic('linear_algebra.md')">
+                    <h3>Linear Algebra</h3>
+                    <p>Matrix theory, eigen systems, decompositions.</p>
+                </div>
+
+                <div class="card" onclick="openTopic('optimization.md')">
+                    <h3>Optimization</h3>
+                    <p>GD, Momentum, Adam, convergence analysis.</p>
+                </div>
+
+                <div class="card" onclick="openTopic('neural_networks.md')">
+                    <h3>Neural Networks</h3>
+                    <p>Architectures, math, derivations.</p>
+                </div>
+
+                <div class="card" onclick="openTopic('differential_equations.md')">
+                    <h3>Differential Equations</h3>
+                    <p>ODEs, PDEs, transforms.</p>
+                </div>
+
+            </section>
+        </section>
+
+    </div>
+</div>
+
+<script>
+    function openTopic(file) {
+        window.location.href = `viewer.html?file=${file}`;
+    }
+</script>
+
+</body>
+</html>
