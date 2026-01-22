@@ -1,7 +1,7 @@
 # <div align = "center">Indexing Layer of a Vector Database</div>
 
 <div align = "center">
-    <img src = "IVF_image.webp">
+    <img src = "IVF_image.png">
 </div>
 
 First of all,lets understand what a vector database is:
