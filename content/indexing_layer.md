@@ -20,3 +20,18 @@ We are going to study specifically about indexing layer.
 *Example*
 > You have 10M books. You need to find a book. Without indexing, you compare the new book with every book which is slow --> O(N)
 > With Indexing, organize books into a smart shelves, jump only to likely shelves which is fast --> O(logN).
+> That "smart shelving is indexing"
+
+Many Indexing techniques already exists, like:
+- Flat Index
+- IVF [Inverted File Index]
+- HNSW [Graph-based Index]
+- PQ [Product Quantization]
+
+In this project, we will be building an IVF style Indexing layer from scratch.
+
+---
+
+But before builing, let's understand, do we even need IVF indexing or we can work with flat indexing(without indexing).
+
+Let's first understand what we are trying to optimize with indexing, whether it's memory space, search time, computation cost etc.
