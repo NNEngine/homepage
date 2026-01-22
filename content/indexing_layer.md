@@ -19,7 +19,9 @@ We are going to study specifically about indexing layer.
 
 *Example*
 > You have 10M books. You need to find a book. Without indexing, you compare the new book with every book which is slow --> O(N)
+
 > With Indexing, organize books into a smart shelves, jump only to likely shelves which is fast --> O(logN).
+
 > That "smart shelving is indexing"
 
 Many Indexing techniques already exists, like:
@@ -82,3 +84,93 @@ Thats's where the indexing wins by reducing memory touched.
 - Time < 10 ms
 
 `That's a 50x-100x speedup`!
+
+Now, let's understand this from code.
+
+First, let's build some vectors. Because of the system limitations, we are going with `n = 729` and `k = 100000`
+
+```
+import numpy as np
+
+embeddings = np.random.rand(100000, 729).astype(np.float32)
+
+np.save("embeddings.npy", embeddings)
+print("Embeddings saved to embeddings.npy")
+```
+
+Now, let's perform the per vector search (brute force) to find the compute and space used.
+
+```
+import numpy as np
+import time
+
+# -----------------------------
+# Load and normalize embeddings
+# -----------------------------
+embeddings = np.load("embeddings.npy").astype(np.float32)
+embeddings /= np.linalg.norm(embeddings, axis=1, keepdims=True)
+
+rows, dims = embeddings.shape
+
+# -----------------------------
+# Prepare query
+# -----------------------------
+query = np.random.rand(dims).astype(np.float32)
+query /= np.linalg.norm(query)
+
+# -----------------------------
+# Brute-force cosine similarity
+# -----------------------------
+start = time.perf_counter()
+scores = embeddings @ query
+end = time.perf_counter()
+
+elapsed = end - start
+
+# -----------------------------
+# MEMORY TRAFFIC ANALYSIS
+# -----------------------------
+bytes_per_float = 4
+bytes_per_vector = dims * bytes_per_float
+total_bytes_read = rows * bytes_per_vector   # embeddings only
+
+mb_read = total_bytes_read / (1024 ** 2)
+bandwidth = (mb_read / elapsed) / (1024)   # MB/s
+
+# -----------------------------
+# COMPUTE REALITY CHECK
+# -----------------------------
+# Dot product FLOPs per vector = (mul + add) = dims + (dims - 1)
+flops_per_vector = 2 * dims - 1
+total_flops = flops_per_vector * rows
+
+gflops = total_flops / elapsed / 1e9
+
+# -----------------------------
+# OUTPUT
+# -----------------------------
+print(f"Shape: {rows} x {dims}")
+print(f"Time (ms): {elapsed * 1000:.3f}")
+
+print("\n--- Memory Traffic Analysis ---")
+print(f"Total data read: {mb_read:.2f} MB")
+print(f"Effective memory bandwidth: {bandwidth:.2f} GB/s")
+
+print("\n--- Compute Reality Check ---")
+print(f"Total FLOPs: {total_flops:,}")
+print(f"Effective compute throughput: {gflops:.3f} GFLOPs/s")
+```
+
+**Output**
+```
+Shape: 100000 x 729
+Time (ms): 29.053
+
+--- Memory Traffic Analysis ---
+Total data read: 278.09 MB
+Effective memory bandwidth: 9.35 GB/s
+
+--- Compute Reality Check ---
+Total FLOPs: 145,700,000
+Effective compute throughput: 5.015 GFLOPs/s
+```
