@@ -1,6 +1,6 @@
 # <div align = "center">Indexing Layer of a Vector Database</div>
 
-<img width="370" height="374" alt="new shivam sharma" src="https://github.com/user-attachments/assets/4a5170e3-f42c-4ded-a70f-6f6b79c28b8b" />
+<img width="474" height="148" alt="IVF_image" src="https://github.com/user-attachments/assets/ba5aeba5-24bc-4e0a-97ba-62cba03df3e0" />
 
 
 First of all,lets understand what a vector database is:
