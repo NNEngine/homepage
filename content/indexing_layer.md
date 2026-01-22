@@ -1,8 +1,7 @@
 # <div align = "center">Indexing Layer of a Vector Database</div>
 
-<div align = "center">
-    <img src = "assets/images/IVF_image.png">
-</div>
+<img width="370" height="374" alt="new shivam sharma" src="https://github.com/user-attachments/assets/4a5170e3-f42c-4ded-a70f-6f6b79c28b8b" />
+
 
 First of all,lets understand what a vector database is:
 > A vector database is a specialized database designed to store, manage, and search high-dimensional vector embeddings, which are numerical representation of complex data like text, images, audio or video.
