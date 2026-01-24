@@ -24,4 +24,7 @@ Infact, Neural Networks can map any existing function, that's why they are calle
 > **A Single hidden layer neural network with a sufficient number of neurons can approximate any continuous function on a closed and bounded domain.**
 
 
-https://github.com/user-attachments/assets/56f11459-2ddc-4832-9423-8bc50e92cb1d
+
+<video controls width="600">
+  <source src="https://github.com/user-attachments/assets/56f11459-2ddc-4832-9423-8bc50e92cb1d" type="video/mp4">
+</video>
