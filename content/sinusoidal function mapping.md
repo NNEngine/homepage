@@ -34,4 +34,6 @@ So, let's start with the mapping of sinusoidal function. We will conduct many ex
 # Sinusoidal Function Mapping
 
 
-https://github.com/user-attachments/assets/02b0d3dd-9f11-436e-9f85-f3076b8e9ff0
+<video autoplay loop muted playsinline controls style="display:block; margin: 0 auto; width:600px; max-width:100%;">
+  <source src="https://github.com/user-attachments/assets/56f11459-2ddc-4832-9423-8bc50e92cb1d" type="video/mp4">
+</video>
