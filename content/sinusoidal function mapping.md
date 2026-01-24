@@ -21,3 +21,6 @@ From the formal definition of the neural networks, we can see that they are some
 Infact, Neural Networks can map any existing function, that's why they are called `Universal Function Approximators` and there is a theorem named **Universal Approximation Theorem (UAT)** given by Cybenko in 1989 which goes something like this.
 
 > **A Single hidden layer neural network with a sufficient number of neurons can approximate any continuous function on a closed and bounded domain.**
+
+
+https://github.com/user-attachments/assets/02b0d3dd-9f11-436e-9f85-f3076b8e9ff0
