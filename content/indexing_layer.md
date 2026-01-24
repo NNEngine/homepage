@@ -1,9 +1,5 @@
 # <div align = "center">Indexing Layer of a Vector Database</div>
 
-<div align = "center">
-    <img src = "assets/images/IVF_image.png">
-</div>
-
 First of all,lets understand what a vector database is:
 > A vector database is a specialized database designed to store, manage, and search high-dimensional vector embeddings, which are numerical representation of complex data like text, images, audio or video.
 
@@ -56,7 +52,7 @@ Let's setup the following problem:
 
 | Operation | Count |
 |-----------|--------|
-|Multiplication|2n + n + 1 = (dor + 2 norms)|
+|Multiplication|2n + n + 1 = (dot + 2 norms)|
 |Additions | 3(n-1)|
 |Square roots | 2|
 | Divisions| 1|
