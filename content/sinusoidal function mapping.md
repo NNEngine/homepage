@@ -114,3 +114,9 @@ for epoch in range(epochs):
 ```
 
 Here is the Output
+
+
+
+<video autoplay loop muted playsinline controls style="display:block; margin: 0 auto; width:600px; max-width:100%;">
+  <source src="https://github.com/user-attachments/assets/a5cf3793-7fd2-4595-923c-fc0909419800" type="video/mp4">
+</video>
