@@ -23,5 +23,15 @@ Infact, Neural Networks can map any existing function, that's why they are calle
 
 > **A Single hidden layer neural network with a sufficient number of neurons can approximate any continuous function on a closed and bounded domain.**
 
+So all we need is one hidden layer to map any continuous function in a bounded function. But here is an issue, theoretically one hidden layer is enough but it might need a very large number of neurons which is inefficient. So, we will be having more than one layer in our neural network and it will help us with the following
+
+- Heirarichical abstraction
+- More efficient representation
+- Better generalization
+
+So, let's start with the mapping of sinusoidal function. We will conduct many experiments each one with a different goal
+
+# Sinusoidal Function Mapping
+
 
 https://github.com/user-attachments/assets/02b0d3dd-9f11-436e-9f85-f3076b8e9ff0
