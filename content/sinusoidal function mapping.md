@@ -37,3 +37,80 @@ So all we need is one hidden layer to map any continuous function in a bounded f
 So, let's start with the mapping of sinusoidal function. We will conduct many experiments each one with a different goal
 
 # Sinusoidal Function Mapping
+
+We will be covering the following cases
+
+- Sine Function mapping in the domain of [$\pi$, $\pi$]
+- Sine function mapping in given domain [$a$, $b$]
+
+## Sine Function mapping in the domain of [$\pi$, $\pi$]
+
+Let's define the setup
+- Input $\in$ [$\pi$, $\pi$]
+- Output $\in$ $sin(Input)$
+- Model
+	- 1 input neuron
+	- 35 neurons in hidden layer
+	- 1 output neuron
+	- with `Tanh` Activation Function
+	- xavier uniform weight activation
+	- MSELoss Function
+	- SGD Optimizer
+	- EPOCHS = 1000
+
+```python
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import plotly.graph_objects as go
+
+# ---------------- GPU / CPU selection ----------------
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print("Using device:", device)
+# ------------------------------------------------------
+
+# Model
+model = nn.Sequential(
+    nn.Linear(1, 35),
+    nn.Tanh(),
+    nn.Linear(35, 1)
+).to(device)  # send model to GPU
+
+# ---- Proper Weight Initialization ----
+def init_weights(m):
+    if isinstance(m, nn.Linear):
+        nn.init.xavier_uniform_(m.weight, gain=nn.init.calculate_gain('tanh'))
+        nn.init.zeros_(m.bias)
+
+model.apply(init_weights)
+
+# Data
+x = torch.linspace(-3.14, 3.14, 1000).unsqueeze(1).to(device)
+y = torch.sin(x)
+
+# Normalize
+x = (x - x.mean()) / x.std()
+y = (y - y.mean()) / y.std()
+
+# Training settings
+epochs = 1000
+loss_fn = nn.MSELoss()
+optimizer = optim.SGD(model.parameters(), lr=0.02)
+
+# Store results for animation
+predictions = []
+losses = []
+
+for epoch in range(epochs):
+    optimizer.zero_grad()
+    output = model(x)
+    loss = loss_fn(output, y)
+    loss.backward()
+    optimizer.step()
+
+    predictions.append(output.detach().cpu().numpy().flatten())
+    losses.append(loss.item())
+
+```
+
+Here is the Output
