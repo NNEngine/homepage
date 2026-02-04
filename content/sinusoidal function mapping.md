@@ -438,3 +438,5 @@ for epoch in tqdm(range(EPOCHS), desc="Training", unit="epoch"):
         )
 
 ```
+
+Here is the output
