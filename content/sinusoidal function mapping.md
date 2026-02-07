@@ -439,4 +439,12 @@ for epoch in tqdm(range(EPOCHS), desc="Training", unit="epoch"):
 
 ```
 
+<<<<<<< HEAD
 Here is the output
+=======
+
+
+<video autoplay loop muted playsinline controls style="display:block; margin: 0 auto; width:600px; max-width:100%;">
+  <source src="https://github.com/user-attachments/assets/bc88edfc-9d43-4c90-923b-ce710fc255ef" type="video/mp4">
+</video>
+>>>>>>> ebced5dff29bfb5393d3a0d882a8f2d4c8d488fb
